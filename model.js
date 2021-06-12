@@ -58,7 +58,7 @@ class ModelUser {
     }
 
     updateUser = (id, myDataObj, callBackFunc) => {
-        users.findByIdAndUpdate(id, myDataObj, (error, success) => {
+        users.findByIdAndUpdate(id, myDataObj, {new: true}, (error, success) => {
             if (error) {
                 callBackFunc(error);
             } else {
